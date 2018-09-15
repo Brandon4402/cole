@@ -31,7 +31,8 @@ import { environment } from '../environment/environment';
     IonicModule.forRoot(MyApp),
     HttpModule,
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment)
+    AngularFireModule.initializeApp(environment),
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -49,4 +50,6 @@ import { environment } from '../environment/environment';
     FirebaseProvider
   ]
 })
-export class AppModule {}
+export class AppModule {
+
+}
