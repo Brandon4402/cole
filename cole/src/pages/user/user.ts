@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FirebaseListObservable } from 'angularfire2/database';
+import { FirebaseProvider } from './../../providers/firebase/firebase';
+
 
 /**
  * Generated class for the UserPage page.
@@ -15,7 +18,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class UserPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  users: FirebaseListObservable<any[]>;
+  newUser = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    skill: '',
+    want: ''
+  };
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public firebaseProvider: FirebaseProvider) {
+    this.users = this.firebaseProvider.getUsers();
+  }
+
+  addUser() {
+    this.firebaseProvider.addUser(this.newUser);
+  }
+
+  removeUser(uid) {
+    this.firebaseProvider.removeUser(uid);
   }
 
   ionViewDidLoad() {
