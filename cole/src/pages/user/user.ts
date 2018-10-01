@@ -19,13 +19,7 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
 export class UserPage {
 
   users: FirebaseListObservable<any[]>;
-  newUser = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    skill: '',
-    want: ''
-  };
+  newUser = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public firebaseProvider: FirebaseProvider) {
     this.users = this.firebaseProvider.getUsers();
