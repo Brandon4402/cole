@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { OpportunityPage } from '../pages/opportunity/opportunity';
 import { UserPage } from '../pages/user/user';
 import { SearchPage } from '../pages/search/search';
@@ -21,7 +20,6 @@ import { environment } from '../environment/environment';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     UserPage,
     OpportunityPage,
     SearchPage
@@ -38,7 +36,6 @@ import { environment } from '../environment/environment';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     UserPage,
     OpportunityPage,
     SearchPage

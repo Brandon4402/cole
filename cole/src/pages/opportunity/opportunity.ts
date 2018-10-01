@@ -18,12 +18,7 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
 export class OpportunityPage {
 
   opportunities: FirebaseListObservable<any[]>;
-  newOpportunity = {
-    name: '',
-    skill: '',
-    user: '',
-    description: ''
-  };
+  newOpportunity = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public firebaseProvider: FirebaseProvider) {
     this.opportunities = this.firebaseProvider.getOpportunities();
